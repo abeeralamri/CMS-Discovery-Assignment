@@ -28,7 +28,7 @@ module Publishable
   def enqueue_publish_job_if_needed
     return unless published_at.present?
     if (respond_to?(:status_scheduled?) && status_scheduled?) || published_at.future?
-      PublishRecordJob.set(wait_until: published_at).perform_later(self)
+      PublishJob.set(wait_until: published_at).perform_later(self)
     end
   end
 end
