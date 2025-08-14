@@ -14,25 +14,14 @@ Build a system to store and discover media programs (podcasts, documentary films
 - Search & list **published-only** content with filtering by language/type/program.
 
 ## Tech Stack
-- **Backend:** Ruby on Rails (API)
+- **Backend:** Ruby on Rails
 - **Database:** PostgreSQL
 
 ---
 
-# Architecture Overview
-
-## Boundaries
-- Admin CMS controllers are isolated from Public Discovery controllers (read-only).
-- Only admins can create programs/content items and publish them.
-
-## Domain Model
-- **ContentType** (e.g., podcast, documentary)
-- **Program** — container/show/series (belongs to ContentType)
-- **ContentItem** — episode/film (belongs to Program)
-
----
-
 # Data Model
+![Architecture Diagram](docs/images/DB_Desgin.png)
+
 
 ## Key Fields
 
